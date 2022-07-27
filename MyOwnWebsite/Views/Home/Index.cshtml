@@ -1,0 +1,127 @@
+﻿@model HomeViewModel
+@{
+    ViewData["Title"] = "Index";
+    <h1>Index</h1>
+}
+
+   <div class="header-text">
+                <p>@Model.owner.Position</p>
+                <h1>Hi , I'm <span>@Model.owner.FullName</span> <br>@Model.owner.Address</h1>
+            </div>
+        </div>
+    </div>
+ <!------------------------------about----------->
+    <div id="about">
+        <div class="container">
+            <div class="row">
+                <div class="about-col-1">
+                    <img src="~/images/@Model.owner.Avatar" alt="user image">
+                </div>
+                <div class="about-col-2">
+                    <h1 class="sub-title">About Me</h1>
+                    <p>
+                       @Model.owner.Position
+                    </p>
+                    <div class="tabe-titles">
+                        <p class="tab-links active-link " onclick="openTab('skills')">Skills</p>
+                        <p class="tab-links " onclick="openTab('experience')">Experience</p>
+                        <p class="tab-links" onclick="openTab('education')">Education</p>
+                    </div>
+                    <div class="tab-contents active-tab" id="skills">
+                        <ul>
+                            <li><span>FrontEnd Developer</span><br>Designing web/app interfaces </li>
+                            <li><span>BackEnd Developer</span><br> web app Development </li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="experience">
+                        <ul>
+                            <li><span>FreeLancer</span><br>on Mostaql And Upwork </li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="education">
+                        <ul>
+                            <li><span>2022</span><br>FullStack Developer Diploma using .Net from ITI</li>
+                            <li><span>2020</span><br> FullStack Developer Diploma using Php and Laravel Framework from Yat Acdmic center </li>
+                            <li><span>2020</span><br>Bacholar Degree from Egyption E-Learning University </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                         <!-- ------------------services-------------- -->
+
+    <div id="services">
+        <div class="container">
+            <h1 class="sub-title"> My Services</h1>
+            <div class="services-list">
+                <div>
+                    <i class="fa-solid fa-code"></i>
+                    <h2>frontend development</h2>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis quisquam, maiores ducimus dicta ipsa commodi possimus asperiores nesciunt repellat blanditiis tempora vitae tenetur rerum nostrum facilis, at corrupti. Soluta, eum?
+                    </p>
+                    <a href="#">See More</a>
+                </div>
+              
+            </div>
+        </div>
+    </div>
+
+@foreach(var item in Model.portofolioItems)
+{
+    <!-- ------------ portofolio ----------->
+     <div id="portofolio">
+
+        <div class="container">
+            <h1 class="sub-title"> My Work</h1>
+            <div class="work-list">
+                <div class="work">
+                    <img src="~/images/@item.ImageUrl" alt="">
+                    <div class="layer">
+                        <h3>@item.ProjectName</h3>
+                        <p> @item.Description</p>
+                        <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                </div>
+
+            </div>
+            <a href="#" class="btn">See more</a>
+        </div>
+    </div>
+}
+
+   
+    <!-- -------------------------- contact --------------->
+    <div id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="contact-left">
+                    <h1 class="sub-title"> Contact Me</h1>
+                    <p> <i class="fa-solid fa-paper-plane"></i> abobakr.mohammed95@gmail.com </p>
+                    <p> <i class="fa-solid fa-square-phone"></i> +201009133638</p>
+                    <div class="social-icons">
+                        <a href="https://www.linkedin.com/in/abobakr-mohammed-934610172/"><i class="fa-brands fa-linkedin"></i></a>
+                        <a href="https://web.facebook.com/BeboMuhammed12/"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="https://www.instagram.com/bebo_muhammed/"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="https://twitter.com/bebo_muhammed12"><i class="fa-brands fa-twitter-square"></i></i></a>
+                        <a href="https://github.com/abobakr-mohammed"><i class="fa-brands fa-github"></i></a>
+
+                    </div>
+                    <a href="~/images/my-cv.pdf" download class="btn btn2">Download CV</a>
+
+                </div>
+                <div class="contact-right">
+
+                    <form name="submit-to-google-sheet">
+                        <input type="text" name="Name" placeholder="Your Name" required>
+                        <input type="email" name="Email" placeholder="Your Email" required>
+                        <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+                        <button type="submit" class="btn btn2">Submit</button>
+                    </form>
+                    <span id="msg"> </span>
+                </div>
+            </div>
+        </div>
+       
